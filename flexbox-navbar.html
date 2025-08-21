@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Navbar</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+      /* Flexbox Navbar Styles */
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: center;
+        gap: 50px; /* Space between items */
+        list-style: none;
+        background-color: palevioletred;
+        padding: 25px 0;
+        /* gap: -20px; Negative gap to overlap items */
+      }
+
+      .nav-item a {
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 10px;
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+      }
+
+      .nav-item a:hover {
+        background-color: rgb(196, 72, 113);
+      }
+
+      @media (max-width: 600px) {
+        .navbar {
+          /* flex-wrap: wrap; Allow items to wrap on smaller screens */
+          flex-direction: column; /* Stack items vertically on small screens */
+          gap: 20px; /* Adjust gap for smaller screens */
+        }
+
+        .nav-item {
+            display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navbar">
+          <li class="nav-item"><a href="#home">Home</a></li>
+          <li class="nav-item"><a href="profile-card.html">About</a></li>
+          <li class="nav-item"><a href="#services">Services</a></li>
+          <li class="nav-item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

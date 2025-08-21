@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aligned Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #0a0a0a;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero {
+      width: 100%;
+      padding: 3rem 0;
+    }
+
+    .hero-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      z-index: 2;
+      margin-top: -27px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #0a0a2f;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .hero-text a {
+      display: inline-block;
+      margin-top: -5px;
+      padding: 0.9rem 1.5rem;
+      background-color: #88b7e0;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-text a:hover {
+      background-color: #133899;
+    }
+
+    /* Shapes Area */
+    .hero-graphic {
+      flex: 1;
+      min-width: 300px;
+      height: 400px;
+      position: relative;
+    }
+
+    .shape1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background-color: #000430;
+      border-radius: 15px;
+      animation: rollInBlocky 3s steps(2) forwards;
+
+    }
+
+    .shape2 {
+      position: absolute;
+      top: 110px;
+      right: 200px;
+      width: 90px;
+      height: 90px;
+      background-color: #000430;
+      border-radius: 50%;
+      animation: bounceFromRight 2s ease-out forwards;
+      animation-delay: 2s;
+      opacity: 0;
+    }
+
+    .shape3 {
+      position: absolute;
+      top: 201px;
+      right: 130px;
+      width: 160px;
+      height: 75px;
+      background-color: #88b7e0;
+      border-radius: 15px;
+      animation: rollIn 2s ease-out forwards;
+      animation-delay: 3s;
+      opacity: 0
+    }
+
+    .shape4 {
+      position: absolute;
+      top: 285px;
+      right: 0;
+      width: 290px;
+      height: 50px;
+      background-color: #000430;
+      border-radius: 10px;
+    }
+
+    /*Animation*/
+
+    @keyframes rollIn {
+      0% {
+        transform: translateX(300px) rotate(0deg);
+        
+      }
+      100% {
+        transform: translateX(0) rotate(-360deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes rollInBlocky {
+      0% {
+        transform: translateX(200px) rotate(0deg);
+      }
+      25% {
+        transform: translateX(150px) rotate(-90deg);
+      }
+      50% {
+        transform: translateX(100px) rotate(-180deg);
+      }
+      75% {
+        transform: translateX(50px) rotate(-270deg);
+      }
+      100% {
+        transform: translateX(0) rotate(-360deg);
+      }
+    }
+
+
+    @keyframes bounceFromRight {
+      0% {
+        transform: translateX(500px) translateY(0);
+        opacity: 0;
+      }
+      15% {
+        transform: translateX(400px) translateY(-100px); /* first hop */
+        opacity: 1;
+      }
+      30% {
+        transform: translateX(300px) translateY(0);
+      }
+      45% {
+        transform: translateX(200px) translateY(-75px); /* smaller hop */
+      }
+      60% {
+        transform: translateX(100px) translateY(0);
+      }
+      75% {
+        transform: translateX(50px) translateY(-50px); /* tiny hop */
+      }
+      90% {
+        transform: translateX(25) translateY(0);
+      }
+      100% {
+        transform: translateX(25) translateY(-25px);
+        opacity: 1;
+      }
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .hero-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-graphic {
+        height: 350px;
+      }
+
+      .shape1,
+      .shape2,
+      .shape3,
+      .shape4 {
+        position: static;
+        margin: 1rem auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">Logo</div>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Hero Section (Full width, but content aligned) -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <!-- Left: Text -->
+        <div class="hero-text">
+          <h1>A Landing Page</h1>
+          <p>
+            This is a modern landing page with a clean layout, abstract visuals,
+            and a bold call-to-action button.
+          </p>
+          <a href="#">Get Started</a>
+        </div>
+
+        <!-- Right: Shapes -->
+        <div class="hero-graphic">
+          <div class="shape1"></div>
+          <div class="shape2"></div>
+          <div class="shape3"></div>
+          <div class="shape4"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

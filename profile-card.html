@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Card</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      #profile-card {
+        max-width: 90%;
+        width: 300px;
+        height: auto;
+        padding: 20px 10px;
+        margin: 100px auto;
+        background-color: rgba(255, 222, 227, 0.5);
+        box-shadow: 0 5px 20px rgba(255, 166, 188, 0.7);
+        border-radius: 30px;
+      }
+
+      #image,
+      #information {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile-pic {
+        width: 150px;
+        height: 150px;
+        border: 5px dashed white;
+        border-radius: 50%;
+        margin-top: 10px;
+      }
+
+      #information .name {
+        margin: 10px 0 0 0;
+        font-family: "Sour Gummy";
+      }
+
+      #information .name,
+      #information p {
+        color: palevioletred;
+      }
+
+      #information p {
+        font-size: 0.85rem;
+      }
+
+      .description.one {
+        margin: 10px 0 0 0;
+      }
+
+      .description.two {
+        margin: 0 0 10px 0;
+      }
+
+      #college-year {
+        margin: 0;
+        font-size: 20px;
+        color: rgb(148, 148, 148);
+      }
+
+      #information a {
+        display: inline-block;
+        margin-top: 5px;
+        font-size: 0.75rem;
+        text-decoration: none;
+        background-color: palevioletred;
+        color: white;
+        padding: 3px 5px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      #information a:hover {
+        background-color: white;
+        color: palevioletred;
+      }
+
+      /* @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #1a1a1a;
+        }
+        #profile-card {
+          background-color: rgba(255, 222, 227, 0.1);
+          box-shadow: 0 5px 20px rgba(255, 166, 188, 0.2);
+        }
+      } */
+    </style>
+  </head>
+
+  <body>
+    <div id="profile-card">
+      <div id="image">
+        <img
+          src="images/picture.jpg"
+          alt="Ronwela Miralles smiling in a profile picture"
+          class="profile-pic"
+        />
+      </div>
+      <div id="information">
+        <h1 class="name">Ronwela Miralles</h1>
+        <h2 id="college-year">CS Major</h2>
+        <p class="description one">College Senior who can only use Scratch.</p>
+        <p class="description two">
+          Currently learning Web Development and Data Analytics.
+        </p>
+
+        <a
+          href="mailto:sampleemail@gmail.com"
+          aria-label="Send email to sampleemail@gmail.com"
+        >
+          sampleemail@gmail.com
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
